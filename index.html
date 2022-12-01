@@ -1,0 +1,142 @@
+<html lang="en">
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparison Operators</title>
+</head>
+
+<body>
+    <h1><u>Comparison Operators</u></h1>
+
+    <br>
+    <h2>TRUTH TABLE OF LOGICAL AND OPERATOR</h2>
+    <p>True && True = True</p>
+    <p>True && False = False</p>
+    <p>False && True = False</p>
+    <p>False && False = False</p>
+    <br>
+    <br>
+    <h2>TRUTH TABLE OF LOGICAL OR OPERATOR</h2>
+    <p>True || True = True</p>
+    <p>True || False = True</p>
+    <p>False || True = True</p>
+    <p>False || False = False</p>
+    <br>
+    <form onsubmit="conditionCheck3() ; return false">
+        <label for="age">Enter Your Age:</label>
+        <input type="number" required id="age"><br>
+        <label for="yearsOfEducation">Enter Your years of education:</label>
+        <input type="number" required id="yearsOfEducation"><br>
+        <label for="city">Enter Your City:</label>
+        <input type="text" required id="city"><br>
+
+        <input type="submit" value="check3">
+    </form>
+    <p id="result3"></p>
+
+    <script>
+        function conditionCheck3() {
+            let age = +document.querySelector("#age").value;
+            let yearsOfEducation = +document.querySelector("#yearsOfEducation").value;
+            let city = document.querySelector("#city").value;
+            if ((age <= 18 && yearsOfEducation >= 10)
+                ||
+                (age <= 26 && yearsOfEducation >= 16)
+                && city === "karachi") {
+                document.querySelector("#result3").innerHTML = "<b>You Are Eligible.</b>"
+            } else {
+                document.querySelector("#result3").innerHTML = "<b>You Are Not Eligible.</b>"
+            }
+        }
+    </script>
+    <hr>
+    <h4> CHECK NOT EQUAL TO CONDITION !==</h4>
+    <p>If entered value <b>is equal not to 30</b>, condition is true</p>
+    <p>Otherwise false</p>
+    <form onsubmit="conditionCheck() ; return false">
+        <label for="temp">Enter the Temperature</label>
+        <input type="number" required id="temp">
+        <input type="submit" value="check">
+
+    </form>
+    <p id="result"></p>
+    <script>
+        function conditionCheck() {
+            let temp = +document.querySelector("#temp").value;
+            if (temp !== 30) {
+                document.querySelector("#result").innerHTML = "Condition is True.";
+            } else {
+                document.querySelector("#result").innerHTML = "Condition is False.";
+            }
+        }
+    </script>
+
+    <br>
+    <hr>
+
+    <h4> CHECK EQUALITY OPERATOR === CONDITION</h4>
+    <p>If entered value <b>is equal to 30</b>, condition is true</p>
+    <p>Otherwise false</p>
+    <form onsubmit="conditionCheck1() ; return false">
+        <label for="temp1">Enter the Temperature</label>
+        <input type="text" required id="temp1">
+        <input type="submit" value="check1">
+    </form>
+    <p id="result1"></p>
+
+    <script>
+        function conditionCheck1() {
+            let temp1 = +document.querySelector("#temp1").value;
+            if (temp1 === 30) {
+                document.querySelector("#result1").innerHTML = "Condition is True.";
+            } else {
+                document.querySelector("#result1").innerHTML = "Condition is False.";
+            }
+        }
+    </script>
+    <br>
+    <hr>
+    <h4> LOGICAL AND OPERATOR && </h4>
+    <p>Check Grades For Given Percentage</p>
+    <p>Enter Value Ranging from <b>0 To 100</b></p>
+    <form onsubmit="conditionCheck2() ; return false">
+        <label for="percentage">Enter the Percentage</label>
+        <input type="text" required min="0" max="100" id="percentage" placeholder="Enter from 0 - 100">
+        <input type="submit" value="check2">
+    </form>
+    <p id="result2"></p>
+
+    <script>
+        function conditionCheck2() {
+            let percentage = parseFloat(document.querySelector("#percentage").value);
+            if (percentage >= 80 && percentage <= 100) {
+                document.querySelector("#result2").innerHTML = "<p><h3>BRAVO!</h3> </p> Your Grade is <b>A-1</b>.";
+            }
+            else if (percentage >= 70 && percentage <= 79) {
+                document.querySelector("#result2").innerHTML = "<p><h3>GOOD!</h3> </p>Your Grade is <b>A</b>.";
+            }
+            else if (percentage >= 60 && percentage <= 69) {
+                document.querySelector("#result2").innerHTML = "<p><h3>KEEP UP</h3> </p>Your Grade is <b>B</b>.";
+            }
+            else if (percentage >= 50 && percentage <= 59) {
+                document.querySelector("#result2").innerHTML = "<p><h3>NEED IMPROVEMENT</h3> </p>Your Grade is <b>C</b>.";
+            }
+            else if (percentage >= 40 && percentage <= 49) {
+                document.querySelector("#result2").innerHTML = "<p><h3>WORK HARDER!</h3> </p>Your Grade is <b>D</b>.";
+            }
+            else if (percentage < 40) {
+                document.querySelector("#result2").innerHTML = "<p><h3>SORRY!</h3> </p>Your are <b>FAILED</b>.";
+            }
+            else if (percentage < 0 && percentage > 100) {
+                document.querySelector("#result2").innerHTML = "<p><b> Invalid Value. </b></p> Your entered value is not in range.";
+
+            }
+        }
+    </script>
+
+</body>
+
+</html>
